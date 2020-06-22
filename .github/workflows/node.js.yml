@@ -17,4 +17,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /var/www/html/gitaction
-          ls
+          npm install
+          npm run build
