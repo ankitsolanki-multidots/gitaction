@@ -16,6 +16,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /var/www/html/gitaction
+          cd ${{ secrets.PATH }}
+          git pull origin
           npm install
           npm run build
