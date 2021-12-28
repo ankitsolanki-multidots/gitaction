@@ -14,3 +14,9 @@ jobs:
 
     - name: Check node
       run: node --version
+      
+    - name: install lighthouse
+      run: npm install -g lighthouse
+      
+    - name: check lighthouse
+      run: lighthouse --version
