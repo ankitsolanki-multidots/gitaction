@@ -17,6 +17,9 @@ jobs:
       
     - name: install lighthouse
       run: npm install -g lighthouse
+    
+    - name: chrom
+      run: npm install -g chrome-launcher
       
     - name: check lighthouse
       run: lighthouse --version
