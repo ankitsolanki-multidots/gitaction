@@ -20,3 +20,6 @@ jobs:
       
     - name: check lighthouse
       run: lighthouse --version
+      
+    - name: lighthouse
+      run: lighthouse google.com
