@@ -19,10 +19,19 @@ jobs:
       run: npm install -g lighthouse
     
     - name: chrom
-      run: npm install -g chrome-launcher
+      run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      
+    - name: 4535345
+      run: sudo dpkg -i ./google-chrome*.deb
+      
+    - name: tests
+      run: sudo apt-get install -f
       
     - name: check lighthouse
       run: lighthouse --version
+      
+    - name: fdfdfd
+      run: which google-chrome
       
     - name: lighthouse
       run: lighthouse google.com
