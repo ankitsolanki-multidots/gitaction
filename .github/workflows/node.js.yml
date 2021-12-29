@@ -19,13 +19,16 @@ jobs:
       run: npm install -g lighthouse
     
     - name: chrom
-      run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      run: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
       
     - name: 4535345
-      run: sudo dpkg -i ./google-chrome*.deb
+      run: sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
       
     - name: tests
-      run: sudo apt-get install -f
+      run: sudo apt-get update
+      
+    - name: tests
+      run: sudo apt-get install google-chrome-stable
       
     - name: check lighthouse
       run: lighthouse --version
